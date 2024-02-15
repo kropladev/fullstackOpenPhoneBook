@@ -1,0 +1,25 @@
+###
+GET https://mkphonebook.fly.dev/api/persons
+
+###
+GET https://mkphonebook.fly.dev/api/persons/4
+
+###
+DELETE https://mkphonebook.fly.dev/api/persons/5
+###
+
+
+###
+POST https://mkphonebook.fly.dev/api/persons
+Content-Type: application/json
+
+{
+  "name": "new persona",
+  "number": "123"
+}
+
+###
+
+
+###
+GET http://localhost:3001/345/pers3434ons
