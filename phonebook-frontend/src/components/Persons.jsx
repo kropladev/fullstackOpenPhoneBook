@@ -1,7 +1,7 @@
 const Persons = ({filter, persons, handleDelete}) => {
 
     const deletePerson = (person) => {
-        if(confirm(`Delete data: ${person.name} [${person.number}] with id ${person.id}?`)){
+        if (confirm(`Delete data: ${person.name} [${person.number}] with id ${person.id}?`)) {
             handleDelete(person.id)
         }
     }

@@ -6,4 +6,4 @@ const Filter = ({filter, handleFilterPersons}) => {
     )
 }
 
-export  default Filter
+export default Filter

@@ -46,12 +46,12 @@ const App = () => {
                     setNewName("")
                     setNewPhone("")
                 }).catch(error => {
-                    setInfoMessage(`${error.response.data.error}`)
-                    setNotificationType('error')
+                setInfoMessage(`${error.response.data.error}`)
+                setNotificationType('error')
 
-                    setTimeout(() => {
-                        setInfoMessage(null)
-                    }, 5000)
+                setTimeout(() => {
+                    setInfoMessage(null)
+                }, 5000)
             })
 
 

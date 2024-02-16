@@ -1,4 +1,4 @@
-const PersonForm = ({savePerson, newName, newPhone, handlePersonNameChange , handlePersonPhoneChange}) => {
+const PersonForm = ({savePerson, newName, newPhone, handlePersonNameChange, handlePersonPhoneChange}) => {
 
     return (
         <>
