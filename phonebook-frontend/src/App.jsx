@@ -88,7 +88,11 @@ const App = () => {
     }
     const handleDelete = (id) => {
         console.log(`handle delete: ${id}`)
-        PersonsService.remove(id).then(data => setPersons(persons.filter(p => p.id !== data.id)));
+        PersonsService.remove(id).then(data => {
+            console.log(id, JSON.stringify(data))
+                setPersons(persons.filter(p => p.id !== id))
+        }
+            );
     }
 
 

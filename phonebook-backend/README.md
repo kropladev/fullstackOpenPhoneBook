@@ -61,3 +61,16 @@ fly deploy
 ```
 
 
+## Connecting to MongoDB
+1) Create account on MongoDB platform. You should get user with password and connection URL.
+2) Install dotenv to store the env parameters 
+```
+npm install dotenv
+```
+3) Storing credentials to connect to DB:
+* A) Create file `.env` in root folder. You can store there MONGO_URI with password inside. This file should be ignore from sending to git and also from docker image (.gitignore, .dockerignore)
+* B) You can also add a secret to Fly.io if you are using it:
+```shell
+fly secrets set MONGODB_URI="mongodb+srv://<your_user_name>:<set_your_password>@<cluster_id>.mongodb.net/phoneApp?retryWrites=true&w=majority"
+```
+
