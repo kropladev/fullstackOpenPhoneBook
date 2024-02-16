@@ -34,9 +34,7 @@ const App = () => {
             })
                 .then(newPerson => setPersons(persons.concat(newPerson)))
                 .then(() => {
-                    setInfoMessage(
-                        `Added '${newName}' to db`
-                    )
+                    setInfoMessage(`Added '${newName}' to db`)
                     setNotificationType('info')
 
                     setTimeout(() => {
@@ -47,7 +45,14 @@ const App = () => {
                 .then(() => {
                     setNewName("")
                     setNewPhone("")
-                })
+                }).catch(error => {
+                    setInfoMessage(`${error.response.data.error}`)
+                    setNotificationType('error')
+
+                    setTimeout(() => {
+                        setInfoMessage(null)
+                    }, 5000)
+            })
 
 
         } else if (persons.some(p => p.name === newName && p.number !== newPhone)) {
@@ -89,10 +94,10 @@ const App = () => {
     const handleDelete = (id) => {
         console.log(`handle delete: ${id}`)
         PersonsService.remove(id).then(data => {
-            console.log(id, JSON.stringify(data))
+                console.log(id, JSON.stringify(data))
                 setPersons(persons.filter(p => p.id !== id))
-        }
-            );
+            }
+        );
     }
 
 
